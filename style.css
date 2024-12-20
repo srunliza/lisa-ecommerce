@@ -1,0 +1,409 @@
+h1,
+h2,
+h3,
+h4,
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+
+
+
+/* style for navbar */
+
+.menu-bar {
+    background-color: seagreen;
+}
+
+.menu ul {
+    display: flex;
+}
+
+.menu ul li a {
+    display: block;
+    padding: 18px;
+    color: white !important;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+.menu ul li a:hover {
+    background-color: darkgoldenrod;
+
+}
+
+
+.menu ul li {
+    position: relative;
+}
+
+.menu ul li .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    background-color: rgb(49, 49, 49);
+    display: none;
+    flex-direction: column;
+    border-radius: 0 0 10px 10px;
+
+}
+
+.menu ul li:hover .sub-menu {
+    display: block;
+}
+
+
+
+/* style for sidebar */
+
+.drawer {
+    position: fixed;
+    left: -170px;
+    top: 0;
+    width: 160px;
+    height: 100vh;
+    background-color: seagreen;
+    z-index: 1;
+    box-shadow: 1px 1px 6px dimgray;
+    transition: all 0.2s;
+}
+
+.drawer ul li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    padding: 18px;
+    color: white;
+}
+
+.drawer ul li a:hover {
+    background-color: darkgoldenrod;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.225);
+}
+
+.drawer ul li {
+    position: relative;
+}
+
+.drawer ul li .sub-menu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: rgb(49, 49, 49);
+    width: 200px;
+    display: none;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 1px 1px 6px dimgray;
+}
+
+.drawer ul li:hover .sub-menu {
+    display: block;
+}
+
+
+/* style for submenu list left side between slide show */
+.left-menu ul {
+    background-color: darkcyan;
+    border-radius: 10px;
+}
+
+.left-menu ul li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px;
+    text-decoration: none;
+    color: white !important;
+    cursor: pointer;
+}
+
+.left-menu ul li a:hover {
+    background-color: rgb(28, 99, 99);
+}
+
+.left-menu ul li .sub-menu {
+    width: 90%;
+    background-color: rgb(20, 20, 20);
+    margin-left: 5%;
+    display: none;
+    border-radius: 0 0 10px 10px;
+}
+
+.left-menu ul li .sub-menu li:last-child a {
+    border-radius: 0 0 10px 10px;
+}
+
+.left-menu ul li .sub-menu li:first-child a {
+    border-radius: 0;
+}
+
+.left-menu ul li:first-child>a {
+    border-radius: 10px 10px 0 0;
+}
+
+.left-menu ul li:last-child a {
+    border-radius: 0 0 10px 10px;
+}
+
+
+/* style for slide show */
+
+.slide-box {
+    width: 100%;
+    height: 500px;
+    background-color: darkgoldenrod;
+    display: flex;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 6px;
+    overflow: hidden;
+
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+    position: relative;
+}
+
+.slide span {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    padding: 4px 12px;
+    color: white;
+    border-radius: 6px;
+    background-color: rgba(46, 139, 86, 0.5);
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btnSlide {
+    position: absolute;
+    top: 50%;
+    padding: 4px 12px;
+    background-color: seagreen;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.btnNext {
+    right: 20px;
+}
+
+.btnBack {
+    left: 20px;
+}
+
+.slide-box .pagination {
+    /* width: 200px; */
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    /* display: flex;
+    justify-content: space-between; */
+    column-gap: 6px;
+    z-index: 1;
+}
+
+.pagination li {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    background-color: rgba(46, 139, 86, 0.3);
+    color: white;
+    line-height: 25px;
+    border-radius: 50%;
+    font-size: 12px;
+    cursor: pointer;
+
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.pagination li:hover {
+    background-color: seagreen;
+}
+
+.pagination li.active {
+    background-color: seagreen;
+}
+
+/* style gallery images */
+.img-box {
+    height: 300px;
+}
+
+
+.img-box .box {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: burlywood;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.img-box .box img {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* spiper show img */
+.swiper-container {
+    height: 600px;
+}
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* frient chat */
+.friend-list {
+    width: 250px;
+    height: 350px;
+    background-color: sandybrown;
+    position: fixed;
+    bottom: 9px;
+    right: 9px;
+    z-index: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.friend-list h1 {
+    font-size: 18px;
+    height: 50px;
+    line-height: 50px;
+    background-color: aqua;
+    padding-left: 12px;
+    cursor: pointer;
+
+}
+
+.friend-list ul li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.friend-list ul li:hover {
+    background-color: bisque;
+}
+
+.friend-list ul {
+    /* padding: 12px; */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    /* overflow-y: scroll;
+    scroll-behavior: smooth; */
+}
+
+.friend-list ul li img {
+    display: block;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    margin-left: 8px;
+}
+
+
+
+.chart-container{
+    position: fixed;
+    bottom: 9px;
+    right: 270px;
+    z-index: 1;
+    display: flex;
+    gap: 10px;
+
+}
+
+.chart-box{
+    width: 200px;
+    height: 300px;
+    background-color: chocolate;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.chart-box .header img{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.chart-box .header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    background-color: aqua;
+    position: relative;
+}
+
+.chart-box .header i {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translate(0, -50%);
+    cursor: pointer;
+}
